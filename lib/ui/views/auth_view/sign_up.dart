@@ -3,16 +3,20 @@ import 'package:flutter_tutorials/ui/route/route_generator.dart';
 import 'package:flutter_tutorials/ui/views/home_view/home_view.dart';
 import 'package:flutter_tutorials/ui/views/widgets/text_fields.dart';
 
-class SignUpView extends StatelessWidget {
-  static const String routeName = '/signUp';
+class SignUpView extends StatefulWidget {
   final String referrarCode;
   SignUpView({Key key, this.referrarCode}) : super(key: key);
 
+  @override
+  _SignUpViewState createState() => _SignUpViewState();
+}
+
+class _SignUpViewState extends State<SignUpView> {
   final TextEditingController referralCodeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    referralCodeController.text = referrarCode ?? '';
+    referralCodeController.text = widget.referrarCode ?? '';
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(

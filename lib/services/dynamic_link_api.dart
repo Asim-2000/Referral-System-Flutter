@@ -1,6 +1,6 @@
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter_tutorials/ui/route/route_generator.dart';
-import 'package:flutter_tutorials/ui/views/auth_view/sign_up.dart';
+import 'package:flutter_tutorials/ui/views/home_view/home-screen.dart';
 
 class DynamicLinksApi {
   final dynamicLink = FirebaseDynamicLinks.instance;
@@ -47,7 +47,7 @@ class DynamicLinksApi {
         print(code.toString());
         if (code != null) {
           GeneratedRoute.navigateTo(
-            SignUpView.routeName,
+            HomeScreen.routeName,
             args: code,
           );
         }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorials/ui/route/route_generator.dart';
-import 'package:flutter_tutorials/ui/views/auth_view/sign_up.dart';
+import 'package:flutter_tutorials/ui/views/home_view/home-screen.dart';
 
 class StartView extends StatefulWidget {
   static const String routeName = '/start';
@@ -18,7 +18,7 @@ class _StartViewState extends State<StartView> {
 
   _waitThenNavigateToSignUpOrHome() async {
     await Future.delayed(Duration(seconds: 3));
-    GeneratedRoute.navigateTo(SignUpView.routeName);
+    GeneratedRoute.navigateTo(HomeScreen.routeName);
   }
 
   @override

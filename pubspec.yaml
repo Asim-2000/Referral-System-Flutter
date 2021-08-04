@@ -33,7 +33,7 @@ dev_dependencies:
 
 flutter_native_splash:
   color: #ffffff
-  image: assets/images/weather_splash.png
+  image: assets/images/weather_splash.jpg
   android: true
   ios: true
 

@@ -12,11 +12,20 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Future weatherFuture;
   final _cityTextController = TextEditingController();
   final _dataService = DataService();
   WeatherResponse _response;
 
-  // get referrarCode => this.referrarCode;
+  @override
+  void initState() {
+    super.initState();
+    // weatherFuture = _getWeather();
+  }
+
+  // _getWeather() async {
+  //   return await _dataService.getWeather(_cityTextController.text);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -43,16 +52,28 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (_response != null)
-                Column(
-                  children: [
-                    Image.network(_response.iconUrl),
-                    Text(
-                      '${_response.tempInfo.temp}°C',
-                      style: TextStyle(fontSize: 40),
-                    ),
-                    Text(_response.weatherInfo.description)
-                  ],
-                ),
+                FutureBuilder(
+                    future: _dataService.getWeather(_cityTextController.text),
+                    builder: (context, snapshot) {
+                      switch (snapshot.connectionState) {
+                        case ConnectionState.active:
+                        case ConnectionState.waiting:
+                          return CircularProgressIndicator();
+                        case ConnectionState.done:
+                          return Column(
+                            children: [
+                              Image.network(_response.iconUrl),
+                              Text(
+                                '${_response.tempInfo.temp}°C',
+                                style: TextStyle(fontSize: 40),
+                              ),
+                              Text(_response.weatherInfo.description)
+                            ],
+                          );
+                        default:
+                          return Text("");
+                      }
+                    }),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 50.0),
                 child: SizedBox(

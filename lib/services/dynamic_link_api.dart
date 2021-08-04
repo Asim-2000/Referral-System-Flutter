@@ -19,7 +19,7 @@ class DynamicLinksApi {
       uriPrefix: 'https://heloo.page.link',
       link: Uri.parse('https://asim123.com/refer?code=ref-12345'),
       androidParameters: AndroidParameters(
-        packageName: 'com.devscore.flutter_tutorials',
+        packageName: 'com.brandverse.weatherx',
       ),
       socialMetaTagParameters: SocialMetaTagParameters(
         title: 'Refer A Friend',

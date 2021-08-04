@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:333256872097:android:7eab1542a5c56d4d58e0e0",
+        "android_client_info": {
+          "package_name": "com.brandverse.weatherx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333256872097-93e6nubq2r7pkasje263qadjk9geguqn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJPMZkljS-zKvKa-zoeJgCq-GISyp9Kqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333256872097-93e6nubq2r7pkasje263qadjk9geguqn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:333256872097:android:da7e560358625c6958e0e0",
         "android_client_info": {
           "package_name": "com.devscore.flutter_tutorials"
